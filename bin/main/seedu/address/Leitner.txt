@@ -1,0 +1,61 @@
+import java.security.KeyStore.Entry;
+import java.util.List;
+import java.util.Scanner;
+
+public class Leitner {
+
+    public Leitner() {
+
+    }
+
+    /**
+     * Initialises 3 ArrayList<Entry> containing the current bucket, correctAnswers
+     * and Wrong Answers For each entry in the bucket, extract the question and
+     * answer then prompt the question to the user. Obtain the userInput and check
+     * for correctness before adding to either to correctAnswer or wrongAnswer
+     * bucket After all entries are completed, shuffle both the answer lists and add
+     * them back to the bucket Repeat the test twice
+     *
+     * @return the score of the flashcard game using the Leitner system
+     */
+    public int flashCard(ArrayList<Entry> entries) {
+        Scanner sc = new Scanner(System.in);
+
+        int scoreAfterTestOne = test(entries, 0);
+        int scoreAfterTestTwo = test(entries, scoreAfterTestOne);
+
+        return scoreAfterTestTwo;
+    }
+
+    public int test(ArrayList<Entry> bucket, int score) {
+
+        ArrayList<Entry> correctAnswer = new ArrayList<>();
+        ArrayList<Entry> wrongAnswer = new ArrayList<>();
+
+        for (Entry entry : bucket) {
+            String question = entry.getTranslation();
+            String answer = entry.getEnglish();
+            entry.promptUser();
+            String userInput = sc.nextLine();
+            if (ans.equals(question.getTranslation())) {
+                wrongAnswer.add(question);
+            } else {
+                score++;
+                correctAnswer.add(question);
+            }
+            bucket.remove(i);
+        }
+
+        Collections.shuffle(wrongAnswer, new Random());
+        Collections.shuffle(correctAnswer, new Random());
+
+        for (Entry entry : wrongAnswer) {
+            bucket.add(entry);
+        }
+
+        for (Entry entry : correctAnswer) {
+            bucket.add(entry);
+        }
+    }
+
+}

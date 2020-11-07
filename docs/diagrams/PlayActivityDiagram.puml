@@ -1,0 +1,26 @@
+@startuml
+start
+:User executes play command;
+
+if() then ([Logic Manager is not in Play Mode])
+    if() then ([A deck is selected in ModelManager])
+        if() then ([Deck is not empty])
+        : Switch Logic Manager to Play Mode;
+        : Create a new Leitner object in ModelManager ;
+        : Add all entries of selected deck into Leitner;
+        : Shuffle and split the entries into a list of questions(containing the entry's translation)
+         and a list of answers (containing the entry's word) in the Leitner object;
+        : Create a new QuizAttempt object in ModelManager;
+        : Display a question on the quiz tab of the UI;
+        : Display a success message to the result box of the UI indicating the start of the quiz;
+        else ([Deck is empty])
+        : Display an error message to the result box of the UI indicating deck is empty;
+        endif
+    else ([No deck is selected in ModelManager])
+    : Display an error message to the UI result box of the indicating no deck is currently selected;
+    endif
+else([Logic Manager is currently in Play Mode])
+:Display an error message to the result box of the UI indicating that the application is currently in play mode;
+endif
+stop
+@enduml

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.stage.*?>
+
+<fx:root minHeight="800.0" minWidth="1000.0" onCloseRequest="#handleExit" title="Green Tea"
+  type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/11.0.3-internal"
+  xmlns:fx="http://javafx.com/fxml/1">
+  <icons>
+    <Image url="/images/green_tea_icon.png"/>
+  </icons>
+  <scene>
+    <Scene>
+      <stylesheets>
+        <URL value="@DarkTheme.css"/>
+        <URL value="@Extensions.css"/>
+      </stylesheets>
+
+      <VBox>
+        <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
+          <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit"/>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp"
+              text="Help"/>
+          </Menu>
+        </MenuBar>
+        <HBox VBox.vgrow="ALWAYS">
+          <StackPane fx:id="deckListPanelPlaceholder" VBox.vgrow="ALWAYS" minWidth="300" maxWidth="300"/>
+          <VBox HBox.hgrow="ALWAYS">
+            <TabPane fx:id="tabPanelPlaceholder" VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE"
+              tabMinWidth="150" minWidth="450" minHeight="360">
+              <Tab id="start_panel" text="Start">
+                <StackPane fx:id="startPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+              </Tab>
+              <Tab id="entries_panel" text="Entries">
+                <StackPane fx:id="entryListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+              </Tab>
+              <Tab id="quiz_panel" text="Quiz">
+                <StackPane fx:id="quizPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+              </Tab>
+              <Tab id="statistics_panel" text="Statistics">
+                <StackPane fx:id="statisticsPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+              </Tab>
+            </TabPane>
+            <StackPane fx:id="resultDisplayPlaceholder" maxHeight="100" minHeight="100"
+              prefHeight="100" styleClass="pane-with-border" VBox.vgrow="NEVER">
+              <padding>
+                <Insets bottom="5" left="10" right="10" top="5"/>
+              </padding>
+            </StackPane>
+            <StackPane fx:id="commandBoxPlaceholder" styleClass="pane-with-border"
+              VBox.vgrow="NEVER">
+              <padding>
+                <Insets bottom="5" left="10" right="10" top="5"/>
+              </padding>
+            </StackPane>
+          </VBox>
+        </HBox>
+        <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER"/>
+      </VBox>
+    </Scene>
+  </scene>
+</fx:root>

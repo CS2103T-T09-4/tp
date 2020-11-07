@@ -1,0 +1,43 @@
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor STORAGE_COLOR
+skinparam classBackgroundColor STORAGE_COLOR
+
+Interface Storage <<Interface>>
+Interface UserPrefsStorage <<Interface>>
+Interface WordBankDeckStorage <<Interface>>
+Interface WordBankQuizStorage <<Interface>>
+Interface WordBankEntryStorage <<Interface>>
+
+Class StorageManager
+Class JsonUserPrefsStorage
+Class JsonWordBankDeckStorage
+
+StorageManager .up.|> Storage
+StorageManager o--> UserPrefsStorage
+StorageManager o--> WordBankDeckStorage
+StorageManager o--> WordBankEntryStorage
+StorageManager o--> WordBankQuizStorage
+
+JsonUserPrefsStorage .up.|> UserPrefsStorage
+
+JsonWordBankDeckStorage .up.|> WordBankDeckStorage
+JsonWordBankDeckStorage .down.> JsonSerializableWordBankDeckStorage
+JsonSerializableWordBankDeckStorage ..> JsonAdaptedDeck
+
+JsonWordBankQuizStorage .up.|> WordBankQuizStorage
+JsonWordBankQuizStorage .down.> JsonSerializableWordBankQuizStorage
+JsonSerializableWordBankQuizStorage ..> JsonAdaptedQuizAttempt
+JsonAdaptedQuizAttempt ..> JsonAdaptedQuestionAttempt
+JsonAdaptedQuizAttempt ..> JsonAdaptedScore
+
+JsonWordBankEntryStorage .up.|> WordBankEntryStorage
+JsonWordBankEntryStorage .down.> JsonSerializableWordBankEntryStorage
+JsonSerializableWordBankEntryStorage ..> JsonAdaptedEntry
+JsonAdaptedEntry ..> JsonAdaptedWord
+JsonAdaptedEntry ..> JsonAdaptedTranslation
+
+
+
+@enduml

@@ -1,0 +1,277 @@
+/*
+ * Unused and deleted:
+ * grid pane, button, dialog pane, split pane,
+ * table view, tab pane, label, #tabs, text field, background,
+ * #tags and tagslabel
+ * #filterField, personListPanel, personWebpage, result
+ *
+ * Metro style Push Button
+ * Author: Pedro Duque Vieira
+ * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
+ */
+
+/*
+Darkest to brightest:
+Dark Grey: #383838
+Pullman Green: #2B3E13 main color
+Dark moss green: 455A20 secondary color
+Dark olive green : #46651f even entry result
+Middle green yellow : #547925 odd entry result
+Brass : A5AF37  unused
+
+*/
+
+/*Used in fxml*/
+.stack-pane {
+    -fx-background-color: derive(#2B3E13, 20%);
+}
+
+.cell_big_label {
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 16px;
+    -fx-text-fill: #010504;
+}
+
+.cell_small_label {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-text-fill: #010504;
+}
+
+.status-bar {
+    -fx-background-color: derive(#2B3E13, 30%);
+}
+
+.pane-with-border {
+    -fx-background-color: derive(#2B3E13, 20%);
+    -fx-border-color: derive(#2B3E13, 10%);
+    -fx-border-top-width: 1px;
+}
+
+.result-display {
+    -fx-background-color: transparent;
+    -fx-font-family: "Segoe UI Light";
+    -fx-font-size: 13pt;
+    -fx-text-fill: white;
+}
+
+.result-display .label {
+    -fx-text-fill: black !important;
+}
+
+/*Used in the listing of entries*/
+.list-cell {
+    -fx-label-padding: 0 0 0 0;
+    -fx-graphic-text-gap: 0;
+    -fx-padding: 0 0 0 0;
+}
+
+.list-cell:filled:even {
+    -fx-background-color: derive(#46651f, 20%);
+}
+
+.list-cell:filled:odd {
+    -fx-background-color: derive(#547925, 50%);
+}
+
+.list-cell:filled:selected #cardPane {
+    -fx-border-color: #3e7b91;
+    -fx-border-width: 1;
+}
+
+.list-cell .label {
+    -fx-text-fill: white;
+}
+
+/*Right border for entry listings*/
+.list-view {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-background-color: derive(#2B3E13, 20%);
+}
+
+.deck-list {
+    -fx-background-insets: 0;
+    -fx-background-color: derive(#2B3E13, 20%);
+    -fx-padding: 0 15 0 0;
+}
+
+/*Menu bar styling*/
+.context-menu {
+    -fx-background-color: derive(#2B3E13, 50%);
+}
+
+.context-menu .label {
+    -fx-text-fill: white;
+}
+
+.menu-bar {
+    -fx-background-color: linear-gradient(to right, #46651f, #f5f5f5);
+}
+
+.menu-bar .label {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+}
+
+.menu .left-container {
+    -fx-background-color: black;
+}
+/*Scroll bar*/
+.scroll-bar {
+    -fx-background-color: #383838
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: derive(#2B3E13, 50%);
+    -fx-background-insets: 3;
+}
+
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+}
+
+.scroll-bar .increment-arrow, .scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+}
+
+.scroll-bar:vertical .increment-arrow, .scroll-bar:vertical .decrement-arrow {
+    -fx-padding: 1 8 1 8;
+}
+
+.scroll-bar:horizontal .increment-arrow, .scroll-bar:horizontal .decrement-arrow {
+    -fx-padding: 8 1 8 1;
+}
+
+/*Command box text settings*/
+#commandTextField {
+    -fx-background-color: transparent #2B3E13 transparent #2B3E13;
+    -fx-background-insets: 0;
+    -fx-border-color: #2B3E13 #2B3E13 #ffffff #2B3E13;
+    -fx-border-insets: 0;
+    -fx-border-width: 1;
+    -fx-font-family: "Segoe UI Light";
+    -fx-font-size: 13pt;
+    -fx-text-fill: white;
+}
+
+/*Command box background colour*/
+#resultDisplay .content {
+    -fx-background-color: transparent, #455A20, transparent, #455A20;
+    -fx-background-radius: 0;
+}
+
+/*Command box red font for fail commands*/
+#commandTypeLabel {
+    -fx-font-size: 11px;
+    -fx-text-fill: #F70D1A;
+}
+
+/* Used in EntryListCard.fxml but unsure why*/
+#cardPane {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+/* Tab styling */
+.tab  {
+    -fx-background-color: #383838;
+    -fx-padding: 0 0 7 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab:selected {
+    -fx-border-width: 5px;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-color: white;
+}
+
+.tab-pane {
+    -fx-background-color: derive(#2B3E13, 20%);
+}
+
+.tab-header-background {
+    -fx-background-color: #383838;
+}
+
+.tab-label {
+    -fx-text-fill: white;
+    -fx-font-family: "Segoe UI Light";
+    -fx-font-size: 20px;
+    -fx-alignment: center;
+}
+
+/* Header */
+.header {
+    -fx-background-color: #383838;
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-font-family: "Segoe UI Light";
+}
+
+/* Start Panel */
+.header-message {
+    -fx-text-fill: white;
+    -fx-font-size: 35px;
+    -fx-alignment: center;
+    -fx-font-family: "Segoe UI Light";
+    -fx-padding: 0 0 10 0;
+}
+
+.command-message {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-alignment: center;
+    -fx-font-family: "Segoe UI Light";
+    -fx-padding: 10 0 40 0;
+}
+
+/* Quiz Panel */
+.question {
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-alignment: center;
+    -fx-font-family: "Segoe UI Light";
+}
+
+.answer-list {
+    -fx-background: derive(#2B3E13, 40%);
+    -fx-background-color: derive(#2B3E13, 40%);
+    -fx-font-size: 18px;
+    -fx-alignment: center;
+    -fx-font-family: "Segoe UI Light";
+}
+
+.quiz-bottom-panel {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-family: "Segoe UI Light";
+    -fx-padding: 40 20 0 20;
+}
+
+.progress-bar .bar{
+    -fx-background-color: linear-gradient(green, #F8E9C7);
+}
+
+/* Remove the white space between horizontal and vertical scroll bars in quiz mode */
+.corner {
+    -fx-background-color: transparent;
+}
+
+/* Score Panel */
+.help-message {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-family: "Segoe UI Light";
+}
+
+/* Start Panel */
+.start-panel{
+    -fx-background-color: derive(#2B3E13, 20%);
+    -fx-border-top-width: 1px;
+}

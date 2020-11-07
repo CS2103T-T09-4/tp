@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.StackPane?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<StackPane fx:id="placeHolder" styleClass="pane-with-border" xmlns="http://javafx.com/javafx/8"
+           xmlns:fx="http://javafx.com/fxml/1" >
+    <VBox alignment="CENTER">
+        <HBox alignment="CENTER">
+            <VBox alignment="CENTER" styleClass="question-box">
+                <ProgressBar fx:id="progressBar" styleClass="progress-bar" minWidth="300" HBox.hgrow="ALWAYS"/>
+                <Label fx:id="question" styleClass="question" minWidth="300" minHeight="350" maxWidth="400" wrapText="true"
+                       HBox.hgrow="ALWAYS" alignment="CENTER"/>
+                <padding>
+                    <Insets left="30" right="20"/>
+                </padding>
+            </VBox>
+            <ScrollPane styleClass="answer-list" minHeight="400" maxHeight="400"
+            maxWidth="450" HBox.hgrow="ALWAYS">
+                <Label fx:id="answerList" StackPane.alignment="CENTER" wrapText="true">
+                    <padding>
+                        <Insets left="20" right="10"/>
+                    </padding>
+                </Label>
+                <padding>
+                    <Insets right="10"/>
+                </padding>
+            </ScrollPane>
+        </HBox>
+        <HBox alignment="CENTER">
+            <Label fx:id="totalQuestions" styleClass="quiz-bottom-panel" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets left="20" right="20"/>
+                </padding>
+            </Label>
+            <Label fx:id="questionsAnswered" styleClass="quiz-bottom-panel" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets right="40"/>
+                </padding>
+            </Label>
+            <Label fx:id="questionsLeft" styleClass="quiz-bottom-panel" HBox.hgrow="ALWAYS"/>
+        </HBox>
+    </VBox>
+</StackPane>

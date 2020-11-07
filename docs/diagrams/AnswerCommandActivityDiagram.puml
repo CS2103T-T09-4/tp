@@ -1,0 +1,32 @@
+@startuml
+start
+:User successfully executes play command;
+:User enter an answer;
+if() then ([Answer is not "/play"])
+    if() then ([Answer is not "/stop"])
+        : Create a new answer command based on user input;
+        if() then ([Answer given is correct])
+        : Increment score in QuizAttempt in Model Manager;
+        else([Answer given is wrong])
+        endif
+        : Extract next question from Leitner;
+        if() then ([Leitner has unanswered questions])
+        : Display next question on the quiz tab of the UI;
+        : Display previous question, previous answer given and correct answer
+        to the previous question on the right side of the quiz tab;
+        else ([Leitner has no more unanswered question])
+        : Switch Logic Manager back to Command Mode;
+        : Extract current score from Model;
+        : Save current score to Statistics object in Logic Manager;
+        : Display a message to the UI result box indicating the current score;
+        endif
+    else ([Answer is "/stop"])
+    : Switch Logic Manager back to Command Mode;
+    : Extract current score from Model;
+    : Display a message to the UI result box indicating the current score;
+    endif
+else([Answer is "/play"])
+:Display an error message to the result box of the UI indicating that the application is currently in play mode;
+endif
+stop
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+
+start
+:User executes command;
+if() then ([Logic Manager is in Play Mode])
+:Parse user input via PlayModeParser;
+:Determine command word and arguments;
+if () then ([Command Word is "/play"])
+:Display relevant error message to the result box of the UI;
+else ([Command Word is not "/play"])
+:Create command based on command word and arguments;
+:Perform relevant actions;
+endif
+
+else([Logic Manager is not in Play Mode])
+:Parse user input via CommandModeParser;
+:Determine command word and arguments;
+if() then ([Command Word and arguments are valid])
+:Create command based on command word and arguments;
+:Perform relevant actions;
+else ([Command Word or arguments are not valid])
+:Display relevant error message to the result box of the UI;
+
+endif
+endif
+
+stop
+
+@enduml
